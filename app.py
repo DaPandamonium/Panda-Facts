@@ -24,7 +24,7 @@ panda_facts = [
 ]
 
 
-@app.route('/fact')
+@app.route('/')
 def index():
     # Directly return a random panda fact at the root URL
     fact = random.choice(panda_facts)
