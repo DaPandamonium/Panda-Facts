@@ -1,9 +1,6 @@
 from flask import Flask, jsonify
 import random
-from flask_cors import CORS  # Import Flask-CORS
-
 app = Flask(__name__)
-CORS(app, resources={r"/fact": {"origins": "*"}})
 
 # List of panda facts
 panda_facts = [
@@ -26,7 +23,6 @@ panda_facts = [
 
 @app.route('/')
 def index():
-    # Directly return a random panda fact at the root URL
     fact = random.choice(panda_facts)
     return jsonify(fact=fact)
 
